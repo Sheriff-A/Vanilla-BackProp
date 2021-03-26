@@ -30,9 +30,27 @@ public class Main{
         * Seed (49)
         * */
         double[] params = new double[] {80, 2, 0.01, 20, 49};
+        String[] inputRequests = new String[]{
+                "Hidden Layer Size: ",
+                "Number of Hidden Layers: ",
+                "Learning Rate: ",
+                "Number of Epochs: ",
+                "Seed: "
+        };
 
         // User Input
-
+        try {
+            double temp;
+            Scanner scan = new Scanner(System.in);
+            for (int i = 0; i < params.length; i++){
+                System.out.print(inputRequests[i]);
+                temp = scan.nextDouble();
+                params[i] = temp;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            System.exit(1);
+        }
         return params;
     }
 
@@ -78,5 +96,6 @@ public class Main{
 
     public static void main(String[] args){
         Main m = new Main();
+        System.exit(0);
     }
 }
