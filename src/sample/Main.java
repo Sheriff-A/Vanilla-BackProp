@@ -80,6 +80,10 @@ public class Main{
                 }
                 scan.close();
             }
+            // Display Size of Data
+            System.out.println("NUMBER OF TRAINING DATA: " + training_data.size());
+            System.out.println("NUMBER OF TESTING DATA: " + testing_data.size());
+
         }catch (Exception e){
             System.out.println(e);
         }

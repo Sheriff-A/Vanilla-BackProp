@@ -96,12 +96,28 @@ public class NN {
                 backProp(input);
 
             }
+            // TRAINING ACCURACY
+            System.out.println("TRAINING ACCURACY: " + test(training_data) + "%");
+            System.out.println();
         }
-        System.out.println();
+
+        System.out.println("---------- DONE TRAINING ----------");
+
+        // PRINT INIT WEIGHTS AND BIASES
+        for (int i = 0; i < weights.size(); i++) {
+            // PRINT WEIGHTS
+            System.out.println("----- WEIGHTS " + (i + 1) + " -----");
+            func.print2DArr(weights.get(i));
+            System.out.println();
+
+            // PRINT BIASES
+            System.out.println("----- BIASES " + (i + 1) + " -----");
+            func.printArr(biases.get(i));
+            System.out.println();
+        }
     }
 
     public double test(ArrayList<Input> testing_data){
-        System.out.println("---------- TESTING ----------");
         double accuracy = 0.0;
         for (Input input: testing_data) {
             feedFoward(input.getData(), hiddenLayers.get(0), weights.get(0), biases.get(0));
